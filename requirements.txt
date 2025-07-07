@@ -1,0 +1,15 @@
+# Core dependencies for Image Enhancement Tool
+numpy
+opencv-python
+pandas
+matplotlib
+seaborn
+plotly
+scikit-image
+Pillow
+streamlit
+PyYAML
+
+# Optional development dependencies
+notebook
+ipykernel

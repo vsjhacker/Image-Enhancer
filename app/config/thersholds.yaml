@@ -1,0 +1,12 @@
+saturation:
+  low_threshold: 30
+  high_threshold: 70
+brightness:
+  low_threshold: 100
+  high_threshold: 200
+contrast:
+  low_threshold: 50
+  high_threshold: 100
+sharpness:
+  low_threshold: 2000
+  high_threshold: 4500
