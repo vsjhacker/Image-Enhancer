@@ -1,0 +1,22 @@
+Image Enhancement Tool - Processing Information
+
+This document provides information about the enhancements applied to your image.
+
+Image Processing Steps:
+1. Image Analysis: Original image parameters are measured
+2. Blur Detection: Advanced algorithms detect blur levels
+3. Noise Detection: Image is analyzed for noise patterns
+4. Deblurring/Denoising: Applied as needed based on detection
+5. Parameter Optimization: Optimal enhancement values are calculated
+6. Enhancement Application: Adjustments are applied to produce final image
+
+Enhanced Parameters:
+- Saturation: Adjusted to optimize color vibrancy
+- Brightness: Modified to improve overall luminance
+- Contrast: Enhanced to improve distinction between elements
+- Sharpness: Refined to enhance details and edges
+
+Note: The Image Enhancement Tool uses intelligent algorithms to determine the best 
+parameters for your specific image. Results may vary depending on the input image quality.
+
+For more information, visit: https://github.com/yourusername/Image-Enchancer
