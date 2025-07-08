@@ -2,7 +2,7 @@
 
 An intelligent image processing application that automatically analyzes and enhances images by optimizing brightness, contrast, saturation, sharpness, and other visual parameters.
 
-![Image Enhancement Tool Screenshot](https://github.com/yourusername/Image-Enchancer/raw/main/app/assets/screenshot.jpg)
+![Image Enhancement Tool Screenshot](image.png)
 
 ## Features
 
