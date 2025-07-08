@@ -1,14 +1,21 @@
 # Core dependencies for Image Enhancement Tool
-numpy
-opencv-python
-pandas
-matplotlib
-seaborn
-plotly
-scikit-image
-Pillow
-streamlit
-PyYAML
+numpy>=1.20.0
+Pillow>=8.0.0
+streamlit>=1.0.0
+PyYAML>=6.0
+
+# Optional dependencies for advanced image processing
+# If opencv-python causes installation issues, it can be omitted
+# The app will run with reduced functionality
+opencv-python>=4.5.0; platform_system != "Linux"
+opencv-python-headless>=4.5.0; platform_system == "Linux"
+scikit-image>=0.18.0
+
+# Data visualization dependencies
+pandas>=1.2.0
+matplotlib>=3.3.0
+seaborn>=0.11.0
+plotly>=5.0.0
 
 # Optional development dependencies
 notebook
