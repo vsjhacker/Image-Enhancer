@@ -44,13 +44,61 @@ except ImportError as e:
         return image_np  # Return original image
 
 def load_thresholds(file_path):
-    # function to load the yaml configurationm file
-    with open(file_path, 'r') as file:
-        thresholds = yaml.safe_load(file)
-    return thresholds
+    """Function to load the yaml configuration file with error handling"""
+    try:
+        with open(file_path, 'r') as file:
+            thresholds = yaml.safe_load(file)
+            return thresholds
+    except FileNotFoundError:
+        st.error(f"Threshold configuration file not found at: {file_path}")
+        # Return default thresholds
+        return {
+            'saturation': {'low_threshold': 30, 'high_threshold': 70},
+            'brightness': {'low_threshold': 100, 'high_threshold': 200},
+            'contrast': {'low_threshold': 50, 'high_threshold': 100},
+            'sharpness': {'low_threshold': 2000, 'high_threshold': 4500}
+        }
+    except Exception as e:
+        st.error(f"Error loading threshold configuration: {e}")
+        # Return default thresholds
+        return {
+            'saturation': {'low_threshold': 30, 'high_threshold': 70},
+            'brightness': {'low_threshold': 100, 'high_threshold': 200},
+            'contrast': {'low_threshold': 50, 'high_threshold': 100},
+            'sharpness': {'low_threshold': 2000, 'high_threshold': 4500}
+        }
 
 # Load thresholds from the YAML file
-thresholds = load_thresholds('./config/thersholds.yaml')
+import os
+
+# Get the absolute path to the config file
+current_dir = os.path.dirname(os.path.abspath(__file__))
+config_path = os.path.join(current_dir, 'config', 'thersholds.yaml')
+
+# Check if file exists and log the path
+if not os.path.exists(config_path):
+    st.error(f"Config file not found at: {config_path}")
+    # Create a default config if it doesn't exist
+    os.makedirs(os.path.dirname(config_path), exist_ok=True)
+    default_config = """saturation:
+  low_threshold: 30
+  high_threshold: 70
+brightness:
+  low_threshold: 100
+  high_threshold: 200
+contrast:
+  low_threshold: 50
+  high_threshold: 100
+sharpness:
+  low_threshold: 2000
+  high_threshold: 4500
+"""
+    with open(config_path, 'w') as f:
+        f.write(default_config)
+    st.info(f"Created default config file at {config_path}")
+
+# Load the thresholds
+thresholds = load_thresholds(config_path)
 
 # Extract the values
 saturation_low_threshold = thresholds['saturation']['low_threshold']

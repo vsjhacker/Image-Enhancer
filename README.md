@@ -53,6 +53,27 @@ cd app
 streamlit run main.py
 ```
 
+### Configuration
+
+The application uses a YAML configuration file located at `app/config/thersholds.yaml` to define the thresholds for image enhancement parameters. The file structure is:
+
+```yaml
+saturation:
+  low_threshold: 30
+  high_threshold: 70
+brightness:
+  low_threshold: 100
+  high_threshold: 200
+contrast:
+  low_threshold: 50
+  high_threshold: 100
+sharpness:
+  low_threshold: 2000
+  high_threshold: 4500
+```
+
+If the configuration file is missing, the application will automatically create one with default values.
+
 ## Usage Examples
 
 ### Basic Image Enhancement
